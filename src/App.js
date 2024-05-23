@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import HitBar from './Hitbar';
+import { Row, Col, Container } from 'react-bootstrap';
+
+const EVIL_SQUAD_COUNT = Array.from({ length: 20 }, (_, index) => index + 1);
+const GOOD_SQUAD_COUNT = Array.from({ length: 10 }, (_, index) => index + 1);
 
 function App() {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <Row>
+        <Col>
+          {EVIL_SQUAD_COUNT.map((item, index) => (
+            <HitBar key={index} startingHealth={20} title={`Evil Squad ${index + 1}`} />
+          ))}
+        </Col>
+        <Col>
+          {GOOD_SQUAD_COUNT.map((item, index) => (
+              <HitBar key={index} startingHealth={20} title={`Good Squad ${index + 1}`} />
+            ))}
+        </Col>
+      </Row>
+    </Container>
   );
 }
 
