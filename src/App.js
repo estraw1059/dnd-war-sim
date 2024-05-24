@@ -1,24 +1,46 @@
-import React from 'react';
+import React, {useState} from 'react';
 import HitBar from './Hitbar';
-import { Row, Col, Container } from 'react-bootstrap';
-
-const EVIL_SQUAD_COUNT = Array.from({ length: 20 }, (_, index) => index + 1);
-const GOOD_SQUAD_COUNT = Array.from({ length: 10 }, (_, index) => index + 1);
+import { Row, Col, Container, Button } from 'react-bootstrap';
+import './style.css';
 
 function App() {
+  const [goodSquadCount, setGoodSquadCount] = useState(Array.from({ length: 10 }, (_, index) => index + 1));
+  const [badSquadCount, setBadSquadCount] = useState(Array.from({ length: 20 }, (_, index) => index + 1));
+  const addGoodSquadMembers = () => {
+    setGoodSquadCount(prevCount => {
+      const currentLength = prevCount.length;
+      const newMembers = Array.from({ length: 1 }, (_, index) => currentLength + index + 1);
+      return [...prevCount, ...newMembers];
+    });
+  };
+
+  const addBadSquadMembers = () => {
+    setBadSquadCount(prevCount => {
+      const currentLength = prevCount.length;
+      const newMembers = Array.from({ length: 1 }, (_, index) => currentLength + index + 1);
+      return [...prevCount, ...newMembers];
+    });
+  };
+
   
   return (
-    <Container>
+    <Container fluid>
       <Row>
         <Col>
-          {EVIL_SQUAD_COUNT.map((item, index) => (
-            <HitBar key={index} startingHealth={20} title={`Evil Squad ${index + 1}`} />
-          ))}
+          <Row>
+            {badSquadCount.map((index) => (
+              <HitBar key={index} startingHealth={20} title={`Evil Squad ${index}`} />
+            ))}
+            <Button onClick={addBadSquadMembers} className="mt-3">Add Good Squad Members</Button>
+          </Row>
         </Col>
         <Col>
-          {GOOD_SQUAD_COUNT.map((item, index) => (
-              <HitBar key={index} startingHealth={20} title={`Good Squad ${index + 1}`} />
-            ))}
+          <Row>
+            {goodSquadCount.map((index) => (
+                <HitBar key={index} startingHealth={20} title={`Good Squad ${index}`} />
+              ))}
+              <Button onClick={addGoodSquadMembers} className="mt-3">Add Good Squad Members</Button>
+          </Row>
         </Col>
       </Row>
     </Container>
