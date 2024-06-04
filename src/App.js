@@ -4,7 +4,7 @@ import { Row, Col, Container, Button } from 'react-bootstrap';
 import './style.css';
 
 function App() {
-  const [goodSquadCount, setGoodSquadCount] = useState(Array.from({ length: 10 }, (_, index) => index + 1));
+  const [goodSquadCount, setGoodSquadCount] = useState(Array.from({ length: 7 }, (_, index) => index + 1));
   const [badSquadCount, setBadSquadCount] = useState(Array.from({ length: 20 }, (_, index) => index + 1));
   const addGoodSquadMembers = () => {
     setGoodSquadCount(prevCount => {
