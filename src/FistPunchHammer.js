@@ -1,7 +1,8 @@
 import { DiceRoll } from '@dice-roller/rpg-dice-roller';
 import React, {useState} from 'react';
-import { Card, Button } from 'react-bootstrap';
+import { Container, Card, Button, Row, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './style.css';
 
 const FistPunchHammer = () => {
     const [attackRoll, setAttackRoll] = useState(0);
@@ -30,16 +31,54 @@ const FistPunchHammer = () => {
 
 
     return (
-        <Card>
-            <Card.Body>
-                <Button onClick={rollAttack} variant="success m-2" className="ml-auto">Attack</Button>
-                <span className='p-3 d-inline-block m-1 border rounded roll-dice'>{attackRoll}</span>
-                <Button onClick={rollDamage} variant="success m-2" className="ml-auto">Damage</Button>
-                <span>Base Damage</span><span className='p-3 d-inline-block m-1 border rounded roll-dice'>{regularDamage}</span>
-                <span>Fire Damage</span><span className='p-3 d-inline-block m-1 border rounded roll-dice'>{fireDamage}</span>
-                <span>Total Damage</span><span className='p-3 d-inline-block m-1 border rounded roll-dice'>{regularDamage + fireDamage}</span>
-            </Card.Body>
-        </Card>
+                <Container className='fist-punch-container'>
+                    <Row className='p-3 m-1 border rounded'>
+                        <Col>
+                            <Button onClick={rollAttack} variant="success m-2" className="ml-auto">Attack</Button>
+                        </Col>
+                        <Col>
+                            <Row>
+                                <Col className="d-flex align-items-center justify-content-center">
+                                    <span>Attack Roll</span>
+                                </Col>
+                                <Col>
+                                    <span className='p-3 d-inline-block m-1 border rounded roll-dice'>{attackRoll}</span>
+                                </Col>
+                            </Row>
+                        </Col>
+                    </Row>
+                    <Row className='p-3 m-1 border rounded'>
+                        <Col>
+                            <Button onClick={rollDamage} variant="success m-2" className="ml-auto">Damage</Button>
+                        </Col>
+                        <Col>
+                            <Row>
+                                <Col className="d-flex align-items-center justify-content-center">
+                                    <span>Base Damage</span>
+                                </Col>
+                                <Col>
+                                    <span className='p-3 d-inline-block m-1 border rounded roll-dice'>{regularDamage}</span>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col className="d-flex align-items-center justify-content-center">
+                                    <span>Fire Damage</span>
+                                </Col>
+                                <Col>
+                                    <span className='p-3 d-inline-block m-1 border rounded roll-dice'>{fireDamage}</span>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col className="d-flex align-items-center justify-content-center">
+                                    <span>Total Damage</span>
+                                </Col>
+                                <Col>
+                                    <span className='p-3 d-inline-block m-1 border rounded roll-dice'>{regularDamage + fireDamage}</span>
+                                </Col>
+                            </Row>
+                        </Col>
+                    </Row>
+                </Container>
     );
 };
 
