@@ -9,7 +9,7 @@ import FistPunchHammer from './FistPunchHammer';
 
 function App() {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <Routes>
           <Route path="/" element={<div>Test</div>} />
           <Route path="/war" element={<WarComp/>} />

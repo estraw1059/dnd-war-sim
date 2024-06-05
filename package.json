@@ -2,6 +2,7 @@
   "name": "dnd-war-sim",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://estraw1059.github.io/dnd-war-sim",
   "dependencies": {
     "@dice-roller/rpg-dice-roller": "^5.5.0",
     "@testing-library/jest-dom": "^5.17.0",
