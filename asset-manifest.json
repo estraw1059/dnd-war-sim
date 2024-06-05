@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.7e29032f.css",
-    "main.js": "/static/js/main.d443603b.js",
-    "index.html": "/index.html",
-    "main.7e29032f.css.map": "/static/css/main.7e29032f.css.map",
-    "main.d443603b.js.map": "/static/js/main.d443603b.js.map"
+    "main.css": "/dnd-war-sim/static/css/main.7e29032f.css",
+    "main.js": "/dnd-war-sim/static/js/main.d443603b.js",
+    "index.html": "/dnd-war-sim/index.html",
+    "main.7e29032f.css.map": "/dnd-war-sim/static/css/main.7e29032f.css.map",
+    "main.d443603b.js.map": "/dnd-war-sim/static/js/main.d443603b.js.map"
   },
   "entrypoints": [
     "static/css/main.7e29032f.css",
