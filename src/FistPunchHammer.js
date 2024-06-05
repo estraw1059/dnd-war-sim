@@ -1,9 +1,9 @@
 import { DiceRoll } from '@dice-roller/rpg-dice-roller';
 import React, {useState} from 'react';
-import { Row, Card, Button } from 'react-bootstrap';
+import { Card, Button } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const FistPunchHammer = () => {
-    const [hammerDamage, setHammerDamage] = useState(0);
     const [attackRoll, setAttackRoll] = useState(0);
     const [regularDamage, setRegularDamageRoll] = useState(0);
     const [rollingDamage, setRollingDamage] = useState(0);
